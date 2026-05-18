@@ -15,8 +15,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+from flask import Flask, request, jsonify, send_from_directory
 import os
-from flask import send_from_directory
 
 @app.route('/')
 def index():
@@ -144,26 +144,15 @@ def aplicaciones_por_vacante(vid):
 def poblar_db():
     if Vacante.query.count() > 0:
         return
-    ejemplos = [
-        ('Vendedor/a de Mostrador',  'Tiempo completo', 'Presencial', 'Atención al cliente y manejo de inventario.'),
-        ('Técnico Electricista',     'Tiempo completo', 'Presencial', 'Instalaciones eléctricas residenciales y comerciales.'),
-        ('Repartidor / Mensajero',   'Tiempo completo', 'Presencial', 'Entrega de pedidos en la zona metropolitana.'),
-        ('Asistente Administrativo', 'Medio tiempo',    'Presencial', 'Apoyo en facturación y cuentas por cobrar.'),
-    ]
-    db.session.add_all([Vacante(titulo=t, tipo=tp, modalidad=m, descripcion=d) for t, tp, m, d in ejemplos])
+    ejemplos = [...]
+    db.session.add_all([...])
     db.session.commit()
-    print('✅  Vacantes de ejemplo creadas.')
-
-
-    app.run(debug=True, port=5000)
+    print('✅  Vacantes de ejemplo creadas.')   # <-- termina aquí
 with app.app_context():
     db.create_all()
     poblar_db()
+
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-        poblar_db()
-    
     import os
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
