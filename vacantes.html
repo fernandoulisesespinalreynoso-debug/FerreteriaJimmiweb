@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabaja con Nosotros — Ferretería Super Jimmy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Estilos/vacantes.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <img class="logo" src="Captura de pantalla 2026-05-15 121012.png" alt="Super Jimmy">
+  <ul class="nav-links">
+    <li><a href="index.html#categorias">Productos</a></li>
+    <li><a href="index.html#ofertas">Ofertas</a></li>
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="index.html#consejos">Consejos</a></li>
+    <li><a href="vacantes.html" class="active">Vacantes</a></li>
+    <li><a href="index.html#ayuda">Ayuda</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Únete al equipo</div>
+    <h1>TRABAJA CON<br><em>NOSOTROS</em></h1>
+    <p>Somos una familia que lleva más de 15 años construyendo confianza. Si tienes ganas de crecer, aquí hay un lugar para ti.</p>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num" id="stat-vacantes">—</div>
+      <div class="stat-label">Vacantes abiertas</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Años en el mercado</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Presencial</div>
+    </div>
+  </div>
+</section>
+
+<!-- MENSAJE HUMANIZADO -->
+<section class="mensaje-equipo">
+  <div class="mensaje-inner">
+    <h3>👷 ¿Qué significa trabajar en Super Jimmy?</h3>
+    <p>Más que un empleo, aquí encontrarás un equipo que se apoya, que celebra los logros juntos y que trata a cada persona con respeto. No buscamos empleados perfectos — buscamos personas con actitud, compromiso y ganas de aprender.</p>
+    <p>Si eres puntual, responsable y te gusta el trato con la gente, ¡queremos conocerte!</p>
+    <div class="firma">— El equipo de Ferretería Super Jimmy</div>
+    <div class="beneficios">
+      <div class="beneficio"><span>✅</span> Ambiente de trabajo positivo</div>
+      <div class="beneficio"><span>📈</span> Oportunidad de crecer</div>
+      <div class="beneficio"><span>🕐</span> Horarios estables</div>
+      <div class="beneficio"><span>🤝</span> Trato justo y respetuoso</div>
+    </div>
+  </div>
+</section>
+
+<!-- VACANTES -->
+<section class="vacantes-section">
+  <div class="section-header">
+    <div class="tag">Oportunidades laborales</div>
+    <h2>PUESTOS DISPONIBLES</h2>
+  </div>
+
+  <div class="filtros">
+    <button class="filtro-btn active" data-filtro="todos">Todos</button>
+    <button class="filtro-btn" data-filtro="Tiempo completo">Tiempo completo</button>
+    <button class="filtro-btn" data-filtro="Medio tiempo">Medio tiempo</button>
+    <button class="filtro-btn" data-filtro="Presencial">Presencial</button>
+  </div>
+
+  <div class="vacantes-grid" id="vacantes-grid">
+    <div class="loading" style="grid-column:1/-1">
+      <div class="spinner"></div>
+      <p>Cargando vacantes...</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>¿NO ENCUENTRAS LO QUE BUSCAS?</h2>
+  <p>Mándanos tu hoja de vida por WhatsApp. Cuando surja una oportunidad, tú serás el primero en saberlo.</p>
+  <a href="https://wa.me/18095550000" class="btn-wa" target="_blank">
+    <span>💬</span> Enviar mi CV por WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">SUPER <span>JIMMY</span></span>
+  <span>© 2026 Ferretería Super Jimmy. Todos los derechos reservados.</span>
+  <span>Diseño: Estudiantes Politecnico Madre Rafaela Ybarra</span>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/18095550000" class="float-wa" target="_blank">💬</a>
+
+<!-- MODAL: FORMULARIO DE APLICACIÓN -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Cerrar">×</button>
+    <span class="modal-tag">Aplicar a vacante</span>
+    <h3 id="modal-titulo">Nombre del puesto</h3>
+    <p class="modal-subtitulo">Completa el formulario y nos pondremos en contacto contigo pronto. 🙌</p>
+    <div class="form-group">
+      <label for="inp-nombre">Nombre completo *</label>
+      <input type="text" id="inp-nombre" placeholder="Tu nombre completo">
+    </div>
+    <div class="form-group">
+      <label for="inp-email">Correo electrónico *</label>
+      <input type="email" id="inp-email" placeholder="correo@ejemplo.com">
+    </div>
+    <div class="form-group">
+      <label for="inp-telefono">Teléfono (opcional)</label>
+      <input type="tel" id="inp-telefono" placeholder="809-000-0000">
+    </div>
+    <div class="form-group">
+      <label for="inp-mensaje">¿Por qué quieres unirte al equipo?</label>
+      <textarea id="inp-mensaje" placeholder="Cuéntanos un poco sobre ti..."></textarea>
+    </div>
+    <button class="btn-submit" id="btn-submit" onclick="enviarAplicacion()">Enviar mi aplicación →</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+  const API = 'http://127.0.0.1:5000/api';
+  let vacanteSeleccionada = null;
+  let todasLasVacantes = [];
+
+  const iconos = {
+    'Vendedor': '🛒', 'Electricista': '⚡', 'Repartidor': '🚚',
+    'Administrativo': '📋', 'Técnico': '🔧', 'Plomero': '🚿',
+  };
+
+  function getIcono(titulo) {
+    return Object.entries(iconos).find(([k]) => titulo.includes(k))?.[1] ?? '👷';
+  }
+
+  function toast(msg, tipo = '') {
+    const el = document.getElementById('toast');
+    el.textContent = msg;
+    el.className = `toast show ${tipo}`;
+    setTimeout(() => el.className = 'toast', 3200);
+  }
+
+  function renderVacantes(lista) {
+    const grid = document.getElementById('vacantes-grid');
+    if (!lista.length) {
+      grid.innerHTML = `<div class="empty"><div class="empty-icon">🔍</div><p>No hay vacantes con ese filtro por ahora.</p></div>`;
+      return;
+    }
+    grid.innerHTML = lista.map((v, i) => `
+      <div class="vacante-card" style="animation-delay:${i * 0.08}s">
+        <div class="vacante-head">
+          <div class="vacante-icon">${getIcono(v.titulo)}</div>
+          <div class="vacante-badges">
+            <span class="badge badge-tipo">${v.tipo}</span>
+            <span class="badge badge-modalidad">${v.modalidad}</span>
+          </div>
+        </div>
+        <div class="vacante-titulo">${v.titulo}</div>
+        <div class="vacante-desc">${v.descripcion || 'Consulta los detalles al aplicar.'}</div>
+        <button class="btn-aplicar" onclick="abrirModal(${v.id}, '${v.titulo.replace(/'/g, "\\'")}')">
+          Quiero aplicar →
+        </button>
+      </div>
+    `).join('');
+  }
+
+  async function cargarVacantes() {
+    try {
+      const res = await fetch(`${API}/vacantes`);
+      todasLasVacantes = await res.json();
+      document.getElementById('stat-vacantes').textContent = todasLasVacantes.length;
+      renderVacantes(todasLasVacantes);
+    } catch {
+      document.getElementById('vacantes-grid').innerHTML = `
+        <div class="empty">
+          <div class="empty-icon">⚠️</div>
+          <p>No pudimos conectar con el servidor. ¿Está corriendo el backend?</p>
+        </div>`;
+    }
+  }
+
+  // Filtros
+  document.querySelectorAll('.filtro-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filtro;
+      renderVacantes(f === 'todos' ? todasLasVacantes : todasLasVacantes.filter(v => v.tipo === f || v.modalidad === f));
+    });
+  });
+
+  // Modal
+  function abrirModal(id, titulo) {
+    vacanteSeleccionada = id;
+    document.getElementById('modal-titulo').textContent = titulo;
+    ['inp-nombre', 'inp-email', 'inp-telefono', 'inp-mensaje'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('modal').classList.add('open');
+  }
+
+  function cerrarModal() { document.getElementById('modal').classList.remove('open'); }
+  document.getElementById('modal-close').addEventListener('click', cerrarModal);
+  document.getElementById('modal').addEventListener('click', e => { if (e.target === e.currentTarget) cerrarModal(); });
+
+  // Enviar aplicación
+  async function enviarAplicacion() {
+    const nombre = document.getElementById('inp-nombre').value.trim();
+    const email  = document.getElementById('inp-email').value.trim();
+    if (!nombre || !email) { toast('❌ Nombre y correo son obligatorios'); return; }
+
+    const btn = document.getElementById('btn-submit');
+    btn.disabled = true; btn.textContent = 'Enviando...';
+
+    try {
+      const res = await fetch(`${API}/vacantes/${vacanteSeleccionada}/aplicar`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre,
+          email,
+          telefono: document.getElementById('inp-telefono').value,
+          mensaje:  document.getElementById('inp-mensaje').value,
+        }),
+      });
+      const data = await res.json();
+      if (res.ok) { cerrarModal(); toast('✅ ' + data.mensaje, 'success'); }
+      else         { toast('❌ ' + (data.error || 'Error al enviar')); }
+    } catch {
+      toast('❌ No se pudo conectar con el servidor');
+    } finally {
+      btn.disabled = false; btn.textContent = 'Enviar mi aplicación →';
+    }
+  }
+
+  cargarVacantes();
+</script>
+</body>
+</html>
