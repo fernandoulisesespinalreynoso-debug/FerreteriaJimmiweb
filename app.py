@@ -15,7 +15,20 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+import os
+from flask import send_from_directory
 
+@app.route('/')
+def index():
+    return send_from_directory('.', 'index.html')
+
+@app.route('/vacantes')
+def vacantes_page():
+    return send_from_directory('.', 'vacantes.html')
+
+@app.route('/<path:filename>')
+def static_files(filename):
+    return send_from_directory('.', filename)
 # ── MODELOS ────────────────────────────────────────────────────────────────────
 
 class Vacante(db.Model):
